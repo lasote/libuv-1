@@ -1,5 +1,43 @@
 ![libuv][libuv_banner]
 
+## Libuv 1.0.0
+
+The source code if this block (entirely) is on this github fork of libuv (on branch **v1.0.0biicode**)
+
+[https://github.com/lasote/libuv](https://github.com/lasote/libuv)
+
+## How to use it?
+
+New with biicode? Check the [getting started guide](http://docs.biicode.com/c++/gettingstarted.html).
+
+Create new biicode project and create an empty block:
+
+    > bii init myproject
+    > bii new myuser/myblock
+
+
+Include **uv.h** from this block in your source code:
+
+    #include "lasote/libuv/include/uv.h"
+
+
+Open **biicode.conf** file and put a requirement to this block:
+
+    [requirements]
+    # This file contains your block external dependencies references
+    lasote/libuv(v1.0): 0
+
+
+Program your code and build it:
+
+    > bii cpp:build # This command will build your project and the libuv dependency
+
+
+You can check an [the example](http://www.biicode.com/examples/examples/libuv/v1.0) with a client/server application using this block.
+
+
+# Official README
+
 ## Overview
 
 libuv is a multi-platform support library with a focus on asynchronous I/O. It
@@ -10,27 +48,16 @@ used by [Luvit](http://luvit.io/), [Julia](http://julialang.org/),
 ## Feature highlights
 
  * Full-featured event loop backed by epoll, kqueue, IOCP, event ports.
-
  * Asynchronous TCP and UDP sockets
-
  * Asynchronous DNS resolution
-
  * Asynchronous file and file system operations
-
  * File system events
-
  * ANSI escape code controlled TTY
-
  * IPC with socket sharing, using Unix domain sockets or named pipes (Windows)
-
  * Child processes
-
  * Thread pool
-
  * Signal handling
-
  * High resolution clock
-
  * Threading and synchronization primitives
 
 ## Versioning
