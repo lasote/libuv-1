@@ -2,7 +2,13 @@
 
 ## Libuv 1.2
 
+Linux GCC:
 [![Build Status](https://travis-ci.org/lasote/libuv-1.svg?branch=v1.x_biicode)](https://travis-ci.org/lasote/libuv-1)
+
+
+Windows Visual Studio:
+[![Build status](https://ci.appveyor.com/api/projects/status/th4i98wk3jkrfuvg?svg=true)](https://ci.appveyor.com/project/lasote/libuv-1)
+
 
 The source code if this block (entirely) is on this github fork of libuv (on branch **v1.x_biicode**)
 
