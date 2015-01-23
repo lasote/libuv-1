@@ -23,7 +23,6 @@ before_build:
     # move the directories
   - cmd: for /d %%i in (../*) do if %%i NEQ "%project_name%" move "..\%%i" blocks\%block_user%\%block_name%\
   - cmd: cd blocks\%block_user%\%block_name%
-  - cmd: biicodizer.bat # Copy header files to include/openssl
   - cmd: bii cpp:configure -G "Visual Studio 12"
 
 build_script:
@@ -31,7 +30,7 @@ build_script:
 
 test_script:
   - cmd: cd ../../../bin
-  - cmd: dir
+  - cmd: dir lasote_libuv_test_run-tests.exe
 
 # to run your custom scripts instead of provider deployments
 deploy_script:

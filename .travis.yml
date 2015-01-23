@@ -27,7 +27,7 @@ script:
 - cd biicode_project
 - if [ "$CXX" == "clang++" ]; then export CXX="clang++" && bii cpp:build; fi
 - if [ "$CXX" == "g++" ];     then export CXX="g++"     && bii cpp:build; fi
-- ls ./bin/
+- ls ./bin/lasote_libuv_test_run-tests
 after_success:
 - bii user lasote -p $BII_LASOTE_PASSWORD
 - bii publish || echo "Ignored publish output..."
