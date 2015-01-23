@@ -2,7 +2,6 @@
 # Include the main biicode macros and functions
 # To learn more about the CMake use with biicode, visit http://docs.biicode.com/c++/building.html
 # Or check the examples below
- 
 macro(ADD_OSX_FRAMEWORK fwname target)
     find_library(FRAMEWORK_${fwname}
     NAMES ${fwname}
