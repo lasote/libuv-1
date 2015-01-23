@@ -1,10 +1,12 @@
 ![libuv][libuv_banner]
 
-## Libuv 1.0.0
+## Libuv 1.2
 
-The source code if this block (entirely) is on this github fork of libuv (on branch **v1.0.0biicode**)
+[![Build Status](https://travis-ci.org/lasote/libuv-1.svg?branch=v1.x_biicode)](https://travis-ci.org/lasote/libuv-1)
 
-[https://github.com/lasote/libuv](https://github.com/lasote/libuv)
+The source code if this block (entirely) is on this github fork of libuv (on branch **v1.x_biicode**)
+
+[https://github.com/lasote/libuv-1](https://github.com/lasote/libuv-1)
 
 ## How to use it?
 
@@ -25,7 +27,7 @@ Open **biicode.conf** file and put a requirement to this block:
 
     [requirements]
     # This file contains your block external dependencies references
-    lasote/libuv(v1.0): 0
+    lasote/libuv(v1.x): 3
 
 
 Program your code and build it: 
