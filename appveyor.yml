@@ -46,4 +46,4 @@ environment:
   block_user:
     "lasote"
   block_name:
-    "libuv(v1.x)"
+    "libuv"
