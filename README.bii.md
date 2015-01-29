@@ -2,6 +2,9 @@
 
 ## Libuv 1.3.0 (stable)
 
+[![Biicode block](https://webapi.biicode.com/v1/badges/lasote/lasote/libuv/v1.x)](https://www.biicode.com/lasote/lasote/libuv/v1.x) 
+
+
 Linux GCC:
 [![Build Status](https://travis-ci.org/lasote/libuv-1.svg?branch=v1.x_biicode)](https://travis-ci.org/lasote/libuv-1)
 
