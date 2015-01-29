@@ -988,7 +988,8 @@ TEST_IMPL(environment_creation) {
       }
     }
     if (prev) { /* verify sort order -- requires Vista */
-#if _WIN32_WINNT >= 0x0600
+#if _WIN32_WINNT >= 0x0600 && \
+    (!defined(__MINGW32__) || defined(__MINGW64_VERSION_MAJOR))
       ASSERT(CompareStringOrdinal(prev, -1, str, -1, TRUE) == 1);
 #endif
     }
@@ -1243,7 +1244,6 @@ TEST_IMPL(closed_fd_events) {
 
   /* create a pipe and share it with a child process */
   ASSERT(0 == pipe(fd));
-  ASSERT(0 == fcntl(fd[0], F_SETFL, O_NONBLOCK));
 
   /* spawn_helper4 blocks indefinitely. */
   init_process_options("spawn_helper4", exit_cb);
