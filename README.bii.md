@@ -35,3 +35,5 @@ Program your code and build it:
 
 You can check an [the example](http://www.biicode.com/examples/examples/libuv/v0.10) with a client/server application using this block.
 
+[libuv_banner]: https://raw.githubusercontent.com/libuv/libuv/master/img/banner.png
+
