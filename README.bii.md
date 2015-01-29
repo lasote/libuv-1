@@ -2,7 +2,11 @@
 
 ## Libuv 0.10.33 (stable)
 
-The source code if this block (entirely) is on this github fork of libuv (on branch **v0.10.29_biicode**)
+The source code if this block (entirely) is on this github fork of libuv (on branch **v0.10_biicode**)
+
+[![Build status](https://ci.appveyor.com/api/projects/status/th4i98wk3jkrfuvg/branch/v0.10_biicode?svg=true)](https://ci.appveyor.com/project/lasote/libuv-1/branch/v0.10_biicode)
+
+[![Build Status](https://travis-ci.org/lasote/libuv-1.svg?branch=v0.10_biicode)](https://travis-ci.org/lasote/libuv-1)
 
 [https://github.com/lasote/libuv](https://github.com/lasote/libuv)
 
