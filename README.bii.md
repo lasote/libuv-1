@@ -1,6 +1,6 @@
 ![libuv][libuv_banner]
 
-## Libuv 1.2
+## Libuv 1.3.0 (stable)
 
 Linux GCC:
 [![Build Status](https://travis-ci.org/lasote/libuv-1.svg?branch=v1.x_biicode)](https://travis-ci.org/lasote/libuv-1)
