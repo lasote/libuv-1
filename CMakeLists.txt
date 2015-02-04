@@ -1,6 +1,7 @@
 IF(BIICODE)
 	INCLUDE(biicode/cmake/tools)
 
+
 	# Initializes block variables
 	INIT_BIICODE_BLOCK()
 
