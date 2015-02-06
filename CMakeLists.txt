@@ -1,3 +1,4 @@
+
 IF(BIICODE)
 	INCLUDE(biicode/cmake/tools)
 
