@@ -32,14 +32,7 @@ test_script:
   - cmd: cd ../../../bin
   - cmd: dir lasote_libuv_test_run-tests.exe
 
-# to run your custom scripts instead of provider deployments
-deploy_script:
-  - cmd: bii user %block_user% -p %secured_passwd%
-  - cmd: bii publish || dir # Ignore output
-
 environment:
-  secured_passwd:
-    secure: lBislJUl6RP/4mh6NOGZcA==
   project_name:
     "myproject"
   block_user:
