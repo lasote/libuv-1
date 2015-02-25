@@ -1,6 +1,6 @@
 ![libuv][libuv_banner]
 
-## Libuv 0.10.33 (stable)
+## Libuv 0.10.34 (stable)
 
 [![Biicode block](https://webapi.biicode.com/v1/badges/lasote/lasote/libuv/v0.10)](https://www.biicode.com/lasote/lasote/libuv/v0.10) 
 
