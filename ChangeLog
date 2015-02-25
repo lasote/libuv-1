@@ -1,4 +1,22 @@
-2015.01.29, Version 0.10.33 (Stable)
+2015.02.25, Version 0.10.35 (Stable)
+
+Changes since version 0.10.34:
+
+* stream: use SO_OOBINLINE on OS X (Fedor Indutny)
+
+
+2015.02.21, Version 0.10.34 (Stable), 37aa4aa9b9712c778d7b249563e868cabfdb8332
+
+Changes since version 0.10.33:
+
+* unix: add atomic-ops.h (Ben Noordhuis)
+
+* unix: fix for uv_async data race (Michael Penick)
+
+* unix: call setgoups before calling setuid/setgid (Saúl Ibarra Corretgé)
+
+
+2015.01.29, Version 0.10.33 (Stable), 7a2253d33ad8215a26c1b34f1952aee7242dd687
 
 Changes since version 0.10.32:
 
