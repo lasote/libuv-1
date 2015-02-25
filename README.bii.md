@@ -2,8 +2,6 @@
 
 ## Libuv 0.10.35 (stable)
 
-[![Biicode block](https://webapi.biicode.com/v1/badges/lasote/lasote/libuv/v0.10)](https://www.biicode.com/lasote/lasote/libuv/v0.10) 
-
 The source code if this block (entirely) is on this github fork of libuv (on branch **v0.10_biicode**)
 
 [![Build status](https://ci.appveyor.com/api/projects/status/th4i98wk3jkrfuvg/branch/v0.10_biicode?svg=true)](https://ci.appveyor.com/project/lasote/libuv-1/branch/v0.10_biicode)
