@@ -2,9 +2,15 @@ language: cpp
 compiler:
 - gcc
 before_install:
+- export TRAVIS_COMMIT_MSG="$(git log --format=%B --no-merges -n 1)"
+- if [[ "$TRAVIS_COMMIT_MSG" = "$COMMIT_IGNORE_BUILD" ]]; then exit 0 ; fi
 - if [ "$CXX" == "g++" ]; then sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test;
   fi
 - sudo apt-get update -qq
+- git config --global user.email "$USER_EMAIL"
+- git config --global user.name "$USER_NAME"
+- git config --global push.default simple
+- git checkout $TRAVIS_BRANCH
 install:
 - if [ "$CXX" == "g++" ]; then sudo apt-get install -qq g++-4.8; fi
 - if [ "$CXX" == "g++" ]; then sudo update-alternatives --install /usr/bin/g++ g++
@@ -20,17 +26,38 @@ install:
 - rm cmake-3.0.2-Linux-64.tar.gz
 - export TRAVIS_CXX=$CXX
 script:
-- cmake --version
+- cd /tmp
 - bii init biicode_project
-- mkdir -p ./biicode_project/blocks/lasote/libuv
-- mv !(biicode_project) ./biicode_project/blocks/lasote/libuv
-- cd biicode_project
+- mkdir -p ./biicode_project/blocks/$USER/$BLOCK_NAME
+- cd biicode_project/blocks/$USER/$BLOCK_NAME
+- shopt -s dotglob && mv $TRAVIS_BUILD_DIR/* ./
 - if [ "$CXX" == "clang++" ]; then export CXX="clang++" && bii cpp:build; fi
 - if [ "$CXX" == "g++" ];     then export CXX="g++"     && bii cpp:build; fi
+- cd /tmp/biicode_project
+# CHECKS
 - ls ./bin/lasote_libuv_test_run-tests
 after_success:
-- bii user lasote -p $BII_LASOTE_PASSWORD
-- bii publish || echo "Ignored publish output..."
+- bii user $USER -p $BII_PASSWORD
+- if [[ -n $TRAVIS_TAG ]]; then bii publish -r --tag STABLE --versiontag $TRAVIS_TAG
+  || echo "Ignored publish output..."; fi
+- if [[ -z $TRAVIS_TAG ]]; then bii publish -r || echo "Ignored publish output...";
+  fi
+- cd /tmp/biicode_project/blocks/$USER/$BLOCK_NAME
+- git config credential.helper "store --file=.git/credentials"
+- echo "https://${GH_TOKEN}:@github.com" > .git/credentials
+- git add -A .
+- git commit -m "$COMMIT_IGNORE_BUILD"
+- git remote -v
+- git remote set-url origin https://github.com/$TRAVIS_REPO_SLUG.git
+- git push
 env:
   global:
-  - secure: WJ7GtQZ/Ejh4DLcurnOhNRaJhi2xyGIjZkD/Xx1HVHxsWpSE8MeCrXvukYg63z3IRp4q+jA9JWqVyMAQifN2XeVXu+F6wQkhNXwhbfnVgYixBJSzdp8f+aSDFjbJWWIhmHaqhB2UOcJddn1vytKNK60qODa1cvmF5N2h98wzXGk=
+  - USER_EMAIL=lasote@gmail.com
+  - USER_NAME="Luis Martinez de Bartolome"
+  - COMMIT_IGNORE_BUILD="Promoted version.***travis***"
+  - BLOCK_NAME=libuv
+  - USER=lasote
+  # travis encrypt BII_PASSWORD=XXXXXXXXXXXXX --add
+  - secure: 13zys78DxHgi61tuj5nTRP1KRFk0vt+4p/SWsBTBxhqLdoZ77NFBNc6oT9LnKMgssfBeiJpKeJJ318s/oBH8vwqnLU29QBpST3Ng+ySQr0kK7COYKDQyRUsUjmU3Yzjls4iK4ONFWi/5W3Q0JXpLvi9FzLeqOAyY+sQUBKCEEC8=
+  # travis encrypt GH_TOKEN=XXXXXXXXXXXXX --add
+  - secure: TCuALh1GRwPom00BlhlSEPHHzZgVh7UIDJXo7o1WPmWFzRBRWIb9XBm2xtyH844Qz1XH3419sr/nHuESO7mFI2YYXjROnLJAukovJkFK/hco7xLHIFUqjGj5XztVvLMnUgZyGlB/oVQYDviGC26iAG28nCuTKlo/+bVfIXIXPV8=
