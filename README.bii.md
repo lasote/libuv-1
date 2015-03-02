@@ -1,6 +1,6 @@
 ![libuv][libuv_banner]
 
-## Libuv 0.10.35 (stable)
+## Libuv 0.10.36 (stable)
 
 The source code if this block (entirely) is on this github fork of libuv (on branch **v0.10_biicode**)
 
