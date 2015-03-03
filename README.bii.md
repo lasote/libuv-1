@@ -16,7 +16,7 @@ Windows Visual Studio:
 
 The source code if this block (entirely) is on this github fork of libuv (on branch **v1.x_biicode**)
 
-[https://github.com/lasote/libuv-1](https://github.com/lasote/libuv-1)
+[![Build status](https://ci.appveyor.com/api/projects/status/th4i98wk3jkrfuvg/branch/v1.x?svg=true)](https://ci.appveyor.com/project/lasote/libuv-1/branch/v1.x)
 
 ## How to use it?
 
